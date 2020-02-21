@@ -1,13 +1,18 @@
 // const Manager = require("./lib/Manager");
+
 // const Engineer = require("./lib/Engineer");
+
 // const Intern = require("./lib/Intern");
+
 const inquirer = require("inquirer");
+
 // const path = require("path");
+
 // const fs = require("fs");
 ​
-// const OUTPUT_DIR = path.resolve(__dirname, "output")
+// const OUTPUT_DIR = path.resolve(__dirname, "output");
 // const outputPath = path.join(OUTPUT_DIR, "team.html");
-​
+// ​
 // const render = require("./lib/htmlRenderer");
 
 
@@ -24,16 +29,16 @@ const inquirer = require("inquirer");
             type:'input',
             name: 'id',
             message: 'What is your Employee ID?',
-            validate: function(value) {
-                var pass = value.match(
-                  /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
-                );
-                if (pass) {
-                  return true;
-                }
+            // validate: function(value) {
+            //     var pass = value.match(
+            //       /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
+            //     );
+            //     if (pass) {
+            //       return true;
+            //     }
           
-                return 'Please enter a valid ID number';
-              }
+            //     return 'Please enter a valid ID number';
+            //   }
         },
         {
             type:'input',
@@ -69,16 +74,16 @@ const inquirer = require("inquirer");
             when: function (answers) {
                 return answers.role === 'Manager'
             },
-            validate: function(value) {
-                var pass = value.match(
-                  /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
-                );
-                if (pass) {
-                  return true;
-                }
+            // validate: function(value) {
+            //     var pass = value.match(
+            //       /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
+            //     );
+            //     if (pass) {
+            //       return true;
+            //     }
           
-                return 'Please enter a valid office number';
-              }
+            //     return 'Please enter a valid office number';
+            //   }
         },
         {
             type:'confirm',
@@ -87,8 +92,9 @@ const inquirer = require("inquirer");
             default: true
         }
     ]
-inquirer.prompt (questions).then(answers => {
-        console.log(answers);
+inquirer.prompt(questions)
+    .then(answers => {
+        console.log(JSON.stringify(answers, null, '  '));
 });
 
 // After the user has input all employees desired, call the `render` function (required
