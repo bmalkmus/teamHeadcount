@@ -23,22 +23,20 @@ let questions =
         { 
             type:'input',
             name: 'name',
-            message: 'What is your name?'
+            message: 'What is your name?',
+            validate: function validateName(name){
+                return name !== '';
+            }
         },
         {
             type:'input',
             name: 'id',
             message: 'What is your Employee ID?',
-            validate: function(value) {
-                var pass = value.match(
-                  /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
-                );
-                if (pass) {
-                  return true;
-                }
-          
-                return 'Please enter a valid ID number';
-              }
+            validate: function validateID(id)
+            {
+               var reg = /^\d+$/;
+               return reg.test(id) || "ID should be a number!";
+            }
         },
         {
             type:'input',
@@ -57,6 +55,9 @@ let questions =
             message: 'What is your github username?',
             when: function (answers) {
                 return answers.role === 'Engineer'
+            },
+            validate: function validateGitHub(github){
+                return github !== '';
             }
         },
         {
@@ -65,6 +66,9 @@ let questions =
             message: 'What School are you attending?',
             when: function (answers) {
                 return answers.role === 'Intern'
+            },
+            validate: function validateSchhol(school){
+                return school !== '';
             }
         },
         {
@@ -74,16 +78,11 @@ let questions =
             when: function (answers) {
                 return answers.role === 'Manager'
             },
-            // validate: function(value) {
-            //     var pass = value.match(
-            //       /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
-            //     );
-            //     if (pass) {
-            //       return true;
-            //     }
-          
-            //     return 'Please enter a valid office number';
-            //   }
+            validate: function validateID(id)
+            {
+               var reg = /^\d+$/;
+               return reg.test(id) || "ID should be a number!";
+            }
         },
         {
             type:'confirm',

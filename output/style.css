@@ -1,0 +1,25 @@
+.employHead{
+    background-color: #109dac;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #546e7a;
+
+
+}
+
+.card-body{
+    background-color: #f1e9dd;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+a {
+    color: #11b0ca;
+}
+
+.team-heading{
+    background-color: #3884b6;
+    font-family: fantasy;
+    font-size: larger;
+    color: white;
+    text-shadow: #11b0ca 3px 3px;
+
+}
