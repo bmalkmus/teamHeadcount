@@ -1,4 +1,12 @@
 const inquirer = require("inquirer");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const path = require("path");
+const fs = require("fs");
+const OUTPUT_DIR = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
+​const render = require("./lib/htmlRenderer");
 
 let questions = 
     [
@@ -74,7 +82,49 @@ let questions =
             default: true
         }
     ]
-inquirer.prompt(questions)
+
+let Roster = []
+
+function ask() {
+    inquirer.prompt(questions)
     .then(answers => {
-        console.log(JSON.stringify(answers, null, '  '));
-});
+        let name = answers.name;
+        let id = answers.id;
+        let email = answers.email;
+        let github = answers.github;
+        let school = answers.school;
+        let office = answers.office;
+        if (answers.role === 'Engineer'){
+            let employ = new Engineer (name, id, email, github);
+            Roster.push(employ);
+        }
+
+        if (answers.role === 'Intern'){
+            let employ = new Intern (name, id, email, school);
+            Roster.push(employ);
+        }
+
+        if (answers.role === 'Manager'){
+            let employ = new Manager (name, id, email, office);
+            Roster.push(employ);
+        }
+
+        if (answers.askAgain == true) {
+            console.log("-----------------------------------");
+            ask();
+        }
+
+        else {
+            console.log (Roster);
+        }
+    
+        // Roster.push(answers);
+        // console.log(Roster);
+        // JSON.stringify(answers, null, '  ')
+        // else{
+        //     console.log(Roster);
+        // }
+    })
+};
+
+ask();
