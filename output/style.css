@@ -23,3 +23,11 @@ a {
     text-shadow: #11b0ca 3px 3px;
 
 }
+
+h2 {
+    font-size: calc(1vw + 10px);
+}
+
+h3 {
+    font-size: calc(1vw + 10px);
+};
