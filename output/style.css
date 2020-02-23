@@ -1,14 +1,41 @@
+body {
+    color:#015486;
+    background-color: #015486;
+}
+
+.text-center {
+    font-size: 50px;
+}
+
 .employHead{
     background-color: #109dac;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #546e7a;
+    color: black;
+    text-shadow:#546e7a 2px 2px 2px;
+    width: 100%;
+    text-align: center;
+    box-shadow: black 5px 5px 10px 2px;
 
 
 }
+.list-group {
+    box-shadow: #546e7a 5px 5px 5px;
+}
 
+.team-area{
+    flex-wrap: wrap;
+}
 .card-body{
     background-color: #f1e9dd;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    box-shadow:black 5px 5px 10px 2px;
+}
+
+.employee-card {
+    margin: 10px;
+    background-color: #015486;
+    border: 0px #015486 solid;
 }
 
 a {
@@ -20,7 +47,8 @@ a {
     font-family: fantasy;
     font-size: larger;
     color: white;
-    text-shadow: #11b0ca 3px 3px;
+    text-shadow: #11b0ca 5px 5px 5px;
+    border-bottom: solid 5px #11b0ca;
 
 }
 
