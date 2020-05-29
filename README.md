@@ -13,5 +13,10 @@ jest npm <br>
 ## Deployment
 https://bmalkmus.github.io/teamHeadcount
 
+## Screenshots
+![Screenshot](DataEntry.png)
+![Screenshot](DataOutput.png)
+
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
