@@ -13,8 +13,11 @@ jest npm <br>
 ## Deployment
 https://bmalkmus.github.io/teamHeadcount
 
-## Screenshots
+## Screenshots<br>
+Data Entry<br>
 ![Screenshot](DataEntry.png)
+<br><br>
+Data Output<br>
 ![Screenshot](DataOutput.png)
 
 
